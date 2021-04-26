@@ -1,6 +1,6 @@
 package kadai2.message;
 
-public class Rectangle implements IMessage {
+public class RectangleMessage implements IMessage {
 
 	@Override
 	public void messageInput() {
