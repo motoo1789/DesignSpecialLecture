@@ -1,6 +1,5 @@
 package input;
 
-import java.math.BigDecimal;
 import java.util.Scanner;
 
 public class KadaiInput2 implements Iinput {
@@ -14,9 +13,9 @@ public class KadaiInput2 implements Iinput {
 	}
 
 	@Override
-	public BigDecimal inpout() {
+	public int inpout() {
 		// TODO 自動生成されたメソッド・スタブ
-		return scanner.nextBigDecimal();
+		return scanner.nextInt();
 	}
 
 	@Override

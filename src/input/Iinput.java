@@ -1,8 +1,6 @@
 package input;
 
-import java.math.BigDecimal;
-
 public interface Iinput {
-	public BigDecimal inpout();
+	public int inpout();
 	public void exit();
 }
