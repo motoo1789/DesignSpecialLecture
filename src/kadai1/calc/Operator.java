@@ -1,4 +1,4 @@
-package calc;
+package kadai1.calc;
 
 import java.math.BigDecimal;
 

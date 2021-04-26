@@ -1,16 +1,14 @@
-package calc;
+package kadai1.calc;
 
 import java.math.BigDecimal;
 
-import calc.Operator;
+public class Add implements Operator {
 
-public class Subtraction implements Operator {
-
-	private final String symbol = "-";
+	private final String symbol = "+";
 	@Override
 	public BigDecimal calc(BigDecimal left, BigDecimal right) {
 		// TODO 自動生成されたメソッド・スタブ
-		return left.subtract(right);
+		return left.add(right);
 	}
 
 	@Override

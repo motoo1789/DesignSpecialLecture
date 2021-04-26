@@ -1,27 +1,25 @@
-package userinterface;
+package input;
 
 import java.math.BigDecimal;
 import java.util.Scanner;
 
-public class Input {
+public class KadaiInput2 implements Iinput {
 
 	public Scanner scanner;
 
-	public Input()
+
+	public KadaiInput2()
 	{
 		scanner = new Scanner(System.in);
 	}
 
-	public BigDecimal getOperand()
-	{
+	@Override
+	public BigDecimal inpout() {
+		// TODO 自動生成されたメソッド・スタブ
 		return scanner.nextBigDecimal();
 	}
 
-	public String getOperator()
-	{
-		return scanner.next();
-	}
-
+	@Override
 	public void exit() {
 		scanner.close();
 	}

@@ -1,9 +1,9 @@
-package userinterface;
+package kadai1.userinterface;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
-import calc.Operator;
+import kadai1.calc.Operator;
 
 public class Message {
 

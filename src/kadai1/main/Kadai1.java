@@ -1,20 +1,18 @@
-package designtokuron;
+package kadai1.main;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ServiceLoader;
-import java.util.stream.Collectors;
 
-import calc.Operator;
-import userinterface.Input;
-import userinterface.Message;
+import kadai1.calc.Operator;
+import kadai1.userinterface.Input;
+import kadai1.userinterface.Message;
 
-public class Main {
+public class Kadai1 {
 
-	public static void main(String[] args) {
-		// TODO 自動生成されたメソッド・スタブ
-
+	public void exe()
+	{
 		Input input = new Input();
 		Message message = new Message();
 		BigDecimal result = null;
@@ -49,7 +47,6 @@ public class Main {
 			message.calcresult(result.toString());
 
 		input.exit();
-
 	}
 
 }
