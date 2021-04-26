@@ -1,6 +1,6 @@
 package input;
 
 public interface Iinput {
-	public int inpout();
+	public int input(String variable);
 	public void exit();
 }

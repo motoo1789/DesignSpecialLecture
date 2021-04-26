@@ -1,4 +1,4 @@
-package kadai2.message;
+package kadai2.shape;
 
 public interface IMessage {
 	void messageInput();

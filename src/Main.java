@@ -9,7 +9,7 @@ public class Main {
 //		Kadai1 kadai1 = new Kadai1();
 //		kadai1.exe();
 
-
+		// 長方形エディタ
 		Kadai2 kadai2 = new Kadai2();
 		kadai2.exe();
 
