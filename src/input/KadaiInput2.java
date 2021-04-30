@@ -21,7 +21,7 @@ public class KadaiInput2 implements Iinput {
 		}
 		catch(Exception e)
 		{
-			System.out.println("数値に変換できる文字を入力してください");
+			System.out.println("数値を入力してください");
 		}
 
 		return inputnum;
