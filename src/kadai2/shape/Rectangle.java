@@ -1,11 +1,20 @@
 package kadai2.shape;
 
+import java.awt.Point;
+import java.util.HashMap;
+import java.util.Map;
+
 public class Rectangle extends AShape implements IMessage{
 
 	int pos_x 	= 0; 		// 左上x
 	int pos_y 	= 0; 		// 左上y
-	int width_x = 0; 	// x幅
-	int width_y = 0; 	// y幅
+	int width_x = 0; 		// x幅
+	int height_y = 0; 		// y幅
+	int widthpos_x = 0;
+	int heightpos_y = 0;
+
+	Map<String,Point> rectanglePoint = new HashMap<String,Point>();
+	String[] rectangleKey = {"左上","右上","左下","右下"};
 
 	public Rectangle()
 	{
@@ -21,13 +30,23 @@ public class Rectangle extends AShape implements IMessage{
 		pos_x 	= super.inputKadai2.input("左上x");
 		pos_y 	= super.inputKadai2.input("左上y");
 		width_x = super.inputKadai2.input("x幅");
-		width_y = super.inputKadai2.input("y幅");
+		height_y = super.inputKadai2.input("y幅");
+
+		// 幅を考慮した座標
+		widthpos_x = pos_x + width_x;
+		heightpos_y = pos_y + height_y;
+
+		// 座標
+		rectanglePoint.put("左上", new Point(pos_x,pos_y));
+		rectanglePoint.put("左下", new Point(pos_x,heightpos_y));
+		rectanglePoint.put("右上", new Point(widthpos_x,pos_y));
+		rectanglePoint.put("右下", new Point(widthpos_x,heightpos_y));
 	}
 
 	@Override
 	public void output() {
 		// TODO 自動生成されたメソッド・スタブ
-		messageOutpur(pos_x, pos_y, pos_x + width_x, pos_y + width_y);
+		messageOutpur(pos_x, pos_y, pos_x + width_x, pos_y + height_y);
 	}
 
 	@Override
