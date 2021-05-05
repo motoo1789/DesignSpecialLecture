@@ -3,6 +3,7 @@ package kadai2.main;
 import java.util.ArrayList;
 import java.util.List;
 
+import kadai2.calc.LapCalc;
 import kadai2.shape.AShape;
 import kadai2.shape.Rectangle;
 
@@ -23,8 +24,12 @@ public class Kadai2 {
 			System.out.println("");	 //	改行
 		}
 
-		AShape rectangle = new Rectangle();
-		rectangle.input();
-		rectangle.output();
+		LapCalc lapcalc = new LapCalc();
+		lapcalc.calc(shapeList);
+
+//		AShape rectangle = new Rectangle();
+//		rectangle.input();
+//		rectangle.output();
+
 	}
 }
