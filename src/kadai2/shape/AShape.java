@@ -1,7 +1,10 @@
 package kadai2.shape;
 
+import java.util.Map;
+
 import input.Iinput;
 import input.KadaiInput2;
+import java.awt.Point;
 
 public abstract class AShape {
 
@@ -14,4 +17,8 @@ public abstract class AShape {
 
 	abstract public void input();
 	abstract public void output();
+	abstract public int getPosX();
+	abstract public int getPosY();
+	abstract public Map<String,Point> getPoint();
+
 }

@@ -46,7 +46,10 @@ public class Rectangle extends AShape implements IMessage{
 	@Override
 	public void output() {
 		// TODO 自動生成されたメソッド・スタブ
-		messageOutpur(pos_x, pos_y, pos_x + width_x, pos_y + height_y);
+		messageOutput("左上",pos_x, pos_y);
+		messageOutput("左下",pos_x, height_y);
+		messageOutput("右上",widthpos_x, pos_y);
+		messageOutput("左下",widthpos_x, height_y);
 	}
 
 	@Override
@@ -58,13 +61,26 @@ public class Rectangle extends AShape implements IMessage{
 	}
 
 	@Override
-	public void messageOutpur(int pos_x, int pos_y, int width_x, int width_y)
+	public void messageOutput(String posName,  int pos_x, int pos_y)
 	{
 		// TODO 自動生成されたメソッド・スタブ
-		System.out.println(
-				"左上(" + pos_x + "," + pos_y + ")"
-			 + " 左下(" + width_x + "," + pos_y + ")"
-			 + " 右上(" + pos_x + "," + width_y + ")"
-			 + " 右下(" + width_x + "," + width_y + ")");
+		System.out.println(posName + "(" + pos_x + "," + pos_y + ")");
+	}
+
+	public int getPosX()
+	{
+		return pos_x;
+	}
+
+	@Override
+	public int getPosY() {
+		// TODO 自動生成されたメソッド・スタブ
+		return pos_x;
+	}
+
+	@Override
+	public Map<String, Point> getPoint() {
+		// TODO 自動生成されたメソッド・スタブ
+		return rectanglePoint;
 	}
 }
