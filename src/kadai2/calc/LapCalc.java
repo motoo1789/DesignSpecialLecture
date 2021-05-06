@@ -4,8 +4,8 @@ import java.awt.Point;
 import java.util.List;
 import java.util.Map;
 
+import kadai2.message.IMessage;
 import kadai2.shape.AShape;
-import kadai2.shape.IMessage;
 
 public class LapCalc implements ICalc,IMessage{
 

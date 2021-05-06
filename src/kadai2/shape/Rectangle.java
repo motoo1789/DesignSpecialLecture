@@ -4,6 +4,8 @@ import java.awt.Point;
 import java.util.HashMap;
 import java.util.Map;
 
+import kadai2.message.IMessage;
+
 public class Rectangle extends AShape implements IMessage{
 
 	int pos_x 	= 0; 		// 左上x
