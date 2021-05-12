@@ -4,9 +4,9 @@ import java.awt.Point;
 import java.util.HashMap;
 import java.util.Map;
 
-import input.KadaiInput2;
+import input.Kadai3Input;
 
-public class Rectangle extends AShape implements IMessage{
+public class RectangleKadai3 extends AShape implements IMessage{
 
 	int pos_x 	= 0; 		// 左上x
 	int pos_y 	= 0; 		// 左上y
@@ -18,40 +18,12 @@ public class Rectangle extends AShape implements IMessage{
 	Map<String,Point> rectanglePoint = new HashMap<String,Point>();
 	String[] rectangleKey = {"左上","右上","左下","右下"};
 
-	public Rectangle()
+	public RectangleKadai3()
 	{
-		super(new KadaiInput2());
-		System.out.println("長方形エディタ");
+		super(new Kadai3Input());
+		System.out.println("長方形エディタ課題３");
 	}
 
-	@Override
-	public boolean input()
-	{
-		// TODO 自動生成されたメソッド・スタブ
-		messageInput();
-		pos_x 	= super.inputKadai.inputInteger("左上x");
-		pos_y 	= super.inputKadai.inputInteger("左上y");
-		width_x = super.inputKadai.inputInteger("x幅");
-		height_y = super.inputKadai.inputInteger("y幅");
-
-		// 幅を考慮した座標
-		widthpos_x = pos_x + width_x;
-		heightpos_y = pos_y + height_y;
-
-		// 座標
-		rectanglePoint.put("左上", new Point(pos_x,pos_y));
-		rectanglePoint.put("左下", new Point(pos_x,heightpos_y));
-		rectanglePoint.put("右上", new Point(widthpos_x,pos_y));
-		rectanglePoint.put("右下", new Point(widthpos_x,heightpos_y));
-
-		return true;
-	}
-
-	@Override
-	public void output() {
-		// TODO 自動生成されたメソッド・スタブ
-		messageOutput(pos_x, pos_y, pos_x + width_x, pos_y + height_y);
-	}
 
 	@Override
 	public void messageInput()
@@ -73,6 +45,46 @@ public class Rectangle extends AShape implements IMessage{
 	}
 
 	@Override
+	public boolean input() {
+		// TODO 自動生成されたメソッド・スタブ
+		messageInput();
+
+		boolean canInput = true;
+
+		try
+		{
+			pos_x 		= Integer.parseInt(super.inputKadai.inputString("左上x"));
+			pos_y 		= Integer.parseInt(super.inputKadai.inputString("左上y"));
+			width_x 	= Integer.parseInt(super.inputKadai.inputString("x幅"));
+			height_y 	= Integer.parseInt(super.inputKadai.inputString("y幅"));
+		}
+		catch (NumberFormatException e)
+		{
+			System.out.println("終わり");
+			canInput = false;
+			return canInput;
+		}
+
+		// 幅を考慮した座標
+		widthpos_x = pos_x + width_x;
+		heightpos_y = pos_y + height_y;
+
+		// 座標
+		rectanglePoint.put("左上", new Point(pos_x,pos_y));
+		rectanglePoint.put("左下", new Point(pos_x,heightpos_y));
+		rectanglePoint.put("右上", new Point(widthpos_x,pos_y));
+		rectanglePoint.put("右下", new Point(widthpos_x,heightpos_y));
+
+		return canInput;
+	}
+
+	@Override
+	public void output() {
+		// TODO 自動生成されたメソッド・スタブ
+		messageOutput(pos_x, pos_y, pos_x + width_x, pos_y + height_y);
+	}
+
+	@Override
 	public int getPosX() {
 		// TODO 自動生成されたメソッド・スタブ
 		return pos_x;
@@ -89,4 +101,5 @@ public class Rectangle extends AShape implements IMessage{
 		// TODO 自動生成されたメソッド・スタブ
 		return rectanglePoint;
 	}
+
 }
