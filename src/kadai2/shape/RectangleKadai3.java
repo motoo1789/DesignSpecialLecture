@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import input.Kadai3Input;
+import input.KadaiInput2;
 
 public class RectangleKadai3 extends AShape implements IMessage{
 
@@ -24,6 +25,17 @@ public class RectangleKadai3 extends AShape implements IMessage{
 		System.out.println("長方形エディタ課題３");
 	}
 
+	public RectangleKadai3(int pos_x, int pox_y,int width_x, int height_y)
+	{
+		super(new KadaiInput2());
+		this.pos_x = pos_x;
+		this.pos_y = pos_y;
+		this.width_x = width_x;
+		this.height_y = height_y;
+
+		// 座標のセット
+		inputPoints();
+	}
 
 	@Override
 	public void messageInput()
@@ -65,6 +77,20 @@ public class RectangleKadai3 extends AShape implements IMessage{
 			return canInput;
 		}
 
+		// 座標のセット
+		inputPoints();
+
+		return canInput;
+	}
+
+	@Override
+	public void output() {
+		// TODO 自動生成されたメソッド・スタブ
+		messageOutput(pos_x, pos_y, pos_x + width_x, pos_y + height_y);
+	}
+
+	public void inputPoints()
+	{
 		// 幅を考慮した座標
 		widthpos_x = pos_x + width_x;
 		heightpos_y = pos_y + height_y;
@@ -74,14 +100,6 @@ public class RectangleKadai3 extends AShape implements IMessage{
 		rectanglePoint.put("左下", new Point(pos_x,heightpos_y));
 		rectanglePoint.put("右上", new Point(widthpos_x,pos_y));
 		rectanglePoint.put("右下", new Point(widthpos_x,heightpos_y));
-
-		return canInput;
-	}
-
-	@Override
-	public void output() {
-		// TODO 自動生成されたメソッド・スタブ
-		messageOutput(pos_x, pos_y, pos_x + width_x, pos_y + height_y);
 	}
 
 	@Override
