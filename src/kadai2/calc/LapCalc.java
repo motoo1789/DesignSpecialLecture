@@ -23,10 +23,10 @@ public class LapCalc implements ICalc,IMessage{
 		LapCalc(shapeList);
 	}
 
-	private void LapCalc(List<AShape> calcShapeList)
+	private void LapCalc(List<AShape> shapeList)
 	{
 		//最初に左上のxの座標を調べて小さい順にListをソート
-		calcShapeList = sort(calcShapeList);
+		List<AShape> calcShapeList = sort(shapeList);
 
 		if(calcShapeList.size() > 1)
 		{
