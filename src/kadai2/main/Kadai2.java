@@ -15,6 +15,12 @@ public class Kadai2 {
 
 	public void exe()
 	{
+		input();
+		output();
+	}
+
+	private void input()
+	{
 		System.out.println("長方形を入力してください");
 
 		while(true)
@@ -31,18 +37,17 @@ public class Kadai2 {
 				break;
 			}
 		}
+	}
 
+	private void output()
+	{
 		for(AShape shape : shapeList)
 		{
 			shape.output();
 		}
 
-//		LapCalc lapcalc = new LapCalc();
-//		lapcalc.calc(shapeList);
-
-//		AShape rectangle = new Rectangle();
-//		rectangle.input();
-//		rectangle.output();
+		LapCalc lapcalc = new LapCalc(shapeList);
+		lapcalc.calc();
 
 	}
 }

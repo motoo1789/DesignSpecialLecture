@@ -8,12 +8,12 @@ import input.KadaiInput2;
 
 public class Rectangle extends AShape implements IMessage{
 
-	int pos_x 	= 0; 		// 左上x
-	int pos_y 	= 0; 		// 左上y
-	int width_x = 0; 		// x幅
-	int height_y = 0; 		// y幅
-	int widthpos_x = 0;
-	int heightpos_y = 0;
+	private int pos_x 	= 0; 		// 左上x
+	private int pos_y 	= 0; 		// 左上y
+	private int width_x = 0; 		// x幅
+	private int height_y = 0; 		// y幅
+	private int widthpos_x = 0;
+	private int heightpos_y = 0;
 
 	Map<String,Point> rectanglePoint = new HashMap<String,Point>();
 	String[] rectangleKey = {"左上","右上","左下","右下"};
@@ -23,6 +23,7 @@ public class Rectangle extends AShape implements IMessage{
 		super(new KadaiInput2());
 		System.out.println("長方形エディタ");
 	}
+
 
 	@Override
 	public boolean input()

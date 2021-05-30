@@ -5,5 +5,5 @@ import java.util.List;
 import kadai2.shape.AShape;
 
 public interface ICalc {
-	void calc(List<AShape> shapeList);
+	void calc();
 }
