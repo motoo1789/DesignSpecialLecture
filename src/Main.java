@@ -1,3 +1,4 @@
+import jsp.JSP;
 import kadai2.main.Kadai2;
 
 public class Main {
@@ -10,9 +11,11 @@ public class Main {
 //		kadai1.exe();
 
 		// 長方形エディタ
-		Kadai2 kadai2 = new Kadai2();
-		kadai2.exe();
+//		Kadai2 kadai2 = new Kadai2();
+//		kadai2.exe();
 
+		JSP jsp = new JSP();
+		jsp.exe();
 	}
 
 }
