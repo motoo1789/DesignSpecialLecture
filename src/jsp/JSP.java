@@ -44,6 +44,9 @@ public class JSP {
 					y++;
 					x--;
 				}
+				outputBUNSHI(x,y);
+				outputBUNBO(x,y);
+				y++;
 			}
 			else
 			{
@@ -54,15 +57,6 @@ public class JSP {
 					y--;
 					x++;
 				}
-			}
-
-			if(x < y) {
-				outputBUNSHI(x,y);
-				outputBUNBO(x,y);
-				y++;
-			}
-			else
-			{
 				outputBUNSHI(x,y);
 				outputBUNBO(x,y);
 				x++;
